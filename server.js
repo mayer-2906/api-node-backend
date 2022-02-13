@@ -6,6 +6,7 @@ const app = express()
 
 app.use(cors())
 
+app.use(express.json())
 //dbconection();
 // data of mongodb
 // user: admin_users
@@ -13,8 +14,8 @@ app.use(cors())
 
 dbConection();
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
+app.get('/users', require('./routes/user-routes'))
+
+app.post('/users', require('./routes/user-routes'))
 
 app.listen(8080)
