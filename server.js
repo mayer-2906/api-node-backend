@@ -14,8 +14,6 @@ app.use(express.json())
 
 dbConection();
 
-app.get('/users', require('./routes/user-routes'))
-
-app.post('/users', require('./routes/user-routes'))
+app.use('/users',require('./routes/user-routes'))
 
 app.listen(8080)
