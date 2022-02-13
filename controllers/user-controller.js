@@ -74,7 +74,7 @@ const updateUser = async (req, resp=response) => {
       })
     }
 
-    const {password, email,...fieldUpdate} = req.body;
+    const {password, email, ...fieldUpdate} = req.body;
     if(user.email !== email){     
       const isExistEmail= await User.findOne({email:req.body.email})
       if(isExistEmail){
